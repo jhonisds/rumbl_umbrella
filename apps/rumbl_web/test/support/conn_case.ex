@@ -14,6 +14,7 @@ defmodule RumblWeb.ConnCase do
   by setting `use RumblWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
+  alias Ecto.Adapters.SQL.Sandbox
 
   use ExUnit.CaseTemplate
 
@@ -22,6 +23,7 @@ defmodule RumblWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
+      import Rumbl.TestHelpers
       import RumblWeb.ConnCase
 
       alias RumblWeb.Router.Helpers, as: Routes
@@ -32,10 +34,10 @@ defmodule RumblWeb.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Rumbl.Repo)
+    :ok = Sandbox.checkout(Rumbl.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Rumbl.Repo, {:shared, self()})
+      Sandbox.mode(Rumbl.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}
