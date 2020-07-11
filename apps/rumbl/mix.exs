@@ -39,7 +39,10 @@ defmodule Rumbl.MixProject do
       {:phoenix_pubsub, "~> 2.0"},
       {:ecto_sql, "~> 3.4"},
       {:postgrex, ">= 0.0.0"},
-      {:jason, "~> 1.0"}
+      {:jason, "~> 1.0"},
+      {:pbkdf2_elixir, "~> 1.2"},
+      {:credo, "~> 1.4"},
+      {:sweet_xml, "~> 0.6.6"}
     ]
   end
 
