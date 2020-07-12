@@ -9,6 +9,20 @@ defmodule InfoSys.Application do
     children = [
       # Starts a worker by calling: InfoSys.Worker.start_link(arg)
       # {InfoSys.Worker, arg}
+
+      # new counter worker
+      # {InfoSys.Counter, 5},
+
+      # Strategy one_for_all
+      # Supervisor.child_spec({InfoSys.Counter, 10}, id: :long),
+      # Supervisor.child_spec({InfoSys.Counter, 10}, id: :short),
+      # Supervisor.child_spec({InfoSys.Counter, 10}, id: :medium)
+
+      # Temporary
+      # Supervisor.child_spec({InfoSys.Counter, 5}, restart: :temporary)
+
+      InfoSys.Cache,
+      {Task.Supervisor, name: InfoSys.TaskSupervisor}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
