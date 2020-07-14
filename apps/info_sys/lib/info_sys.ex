@@ -5,6 +5,9 @@ defmodule InfoSys do
   @backends [InfoSys.Wolfram]
 
   defmodule Result do
+    @moduledoc """
+    Module Result
+    """
     defstruct score: 0, text: nil, backend: nil
   end
 

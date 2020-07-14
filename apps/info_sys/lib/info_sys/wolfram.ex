@@ -1,4 +1,7 @@
 defmodule InfoSys.Wolfram do
+  @moduledoc """
+  Module Wolfram
+  """
   import SweetXml
   alias InfoSys.Result
 
