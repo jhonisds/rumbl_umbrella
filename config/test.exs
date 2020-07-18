@@ -23,3 +23,8 @@ config :logger, level: :warn
 
 # Config number of hashings
 config :pbkdf2_elixir, :rounds, 1
+
+# Wolfram config
+config :info_sys, :wolfram,
+  app_id: "1234",
+  http_client: InfoSys.Test.HTTPClient
