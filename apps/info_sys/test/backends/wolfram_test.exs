@@ -1,7 +1,6 @@
 defmodule InfoSys.Backends.WolframTest do
   use ExUnit.Case, async: true
 
-  @tag :pending
   test "makes request, reports results, the terminates" do
     actual = hd(InfoSys.compute("1 + 1", []))
     assert actual.text == "2"
