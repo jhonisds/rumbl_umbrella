@@ -34,7 +34,7 @@ defmodule InfoSysTest do
   end
 
   test "compute/2 with timeout returns no results" do
-    results = InfoSys.compute("timeouts", backends: [TestBackend], timeout: 10)
+    results = InfoSys.compute("timeout", backends: [TestBackend], timeout: 10)
     assert results == []
   end
 
