@@ -1,7 +1,10 @@
 defmodule RumblWeb.TestHelpers do
+  @moduledoc """
+    Module Test Helper
+  """
   alias Rumbl.{Accounts, Multimedia}
 
-  defp default_user() do
+  defp default_user do
     %{
       name: "Some User",
       username: "user #{System.unique_integer([:positive])}",
@@ -18,7 +21,7 @@ defmodule RumblWeb.TestHelpers do
     user
   end
 
-  defp default_video() do
+  defp default_video do
     %{
       url: "test@example.com",
       description: "a video",

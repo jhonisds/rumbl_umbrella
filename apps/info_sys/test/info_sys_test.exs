@@ -5,7 +5,7 @@ defmodule InfoSysTest do
   alias InfoSys.Result
 
   defmodule TestBackend do
-    def name(), do: "Wolfram"
+    def name(do: "Wolfram")
 
     def compute("result", _opts) do
       [%Result{backend: __MODULE__, text: "result"}]
